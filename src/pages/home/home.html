@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Encontrame</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let publication of publications">
+      <ion-card>
+        <img src={{publication.photo}}/>
+        <ion-card-header>
+          {{publication.name}} - {{publication.age}}
+        </ion-card-header>
+        <ion-card-content>
+          <!--button ion-button outline full (click)='publicationInfo(publication.id)'>Mas informacion</button-->
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
