@@ -1,8 +1,8 @@
 {
-  "name": "encontrame_app",
+  "name": "Encontrame",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Drkpkg",
+  "homepage": "",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -21,9 +21,12 @@
     "@angular/platform-browser": "4.4.3",
     "@angular/platform-browser-dynamic": "4.4.3",
     "@ionic-native/core": "4.3.0",
+    "@ionic-native/facebook": "^4.3.1",
     "@ionic-native/splash-screen": "4.3.0",
     "@ionic-native/status-bar": "4.3.0",
-    "@ionic/storage": "2.0.1",
+    "@ionic/storage": "^2.0.1",
+    "cordova-plugin-facebook4": "^1.9.1",
+    "cordova-sqlite-storage": "^2.0.4",
     "ionic-angular": "3.7.1",
     "ionicons": "3.0.0",
     "rxjs": "5.4.3",
@@ -34,5 +37,14 @@
     "@ionic/app-scripts": "3.0.0",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "132781154012177",
+        "APP_NAME": "Encontrame"
+      }
+    }
+  }
 }

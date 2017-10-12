@@ -1,21 +1,31 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Encontrame</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Encontrame</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let publication of publications">
-      <ion-card>
-        <img src={{publication.photo}}/>
-        <ion-card-header>
-          {{publication.name}} - {{publication.age}}
-        </ion-card-header>
-        <ion-card-content>
-          <!--button ion-button outline full (click)='publicationInfo(publication.id)'>Mas informacion</button-->
-        </ion-card-content>
-      </ion-card>
+    <ion-item *ngIf="session">
+        <ion-label>Filtrar solo mis publicaciones</ion-label>
+        <ion-checkbox [(ngModel)]="show_my_publications"></ion-checkbox>
     </ion-item>
-  </ion-list>
+
+    <ion-list>
+        <ion-item *ngFor="let publication of publications" (click)='publicationInfo(publication.id)'>
+            <ion-card>
+                <img src={{publication.photo}}/>
+                <ion-card-header>
+                    {{publication.name}} - {{publication.age}}
+                </ion-card-header>
+                <ion-card-content>
+                    <!--button ion-button outline full (click)='publicationInfo(publication.id)'>Mas informacion</button-->
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+    <ion-fab bottom right>
+        <button ion-fab>
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>

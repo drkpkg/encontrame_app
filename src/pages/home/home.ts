@@ -12,24 +12,24 @@ import { PublicationsServiceProvider } from './../../providers/publications-serv
 export class HomePage {
   public publication: any;
   public publications: any;
-  
+
   constructor(public navCtrl: NavController, public publicationsService: PublicationsServiceProvider){
     this.loadPublications();
   }
   
   loadPublications(){
-    this.publicationsService.load('/publications')
+    this.publicationsService.load('publications')
     .then(data => {
       this.publications = data.data;
     });
   }
 
   publicationInfo(id){
-    this.publicationsService.load('/publications/' + id)
+    this.publicationsService.load('publications/' + id)
     .then(data => {
       this.publication = data.data;
       this.navCtrl.push(publicationInfoPage, {
-        id: id
+        data: this.publication
       })
     });
   }

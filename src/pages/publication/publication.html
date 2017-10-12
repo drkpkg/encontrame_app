@@ -1,10 +1,13 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Encontrame</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Encontrame</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <img src={{publication.photo}}/>
-  {{publication.name}} - {{publication.age}}
+    <img src={{publication.photo}}/>
+    <p><strong>Nombre:</strong> {{publication.name}}</p>
+    <p>{{publication.sex}} - {{publication.age}} años</p>
+    <p></p>
+
 </ion-content>
