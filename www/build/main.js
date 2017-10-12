@@ -65,7 +65,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/drkpkg/Projects/encontrame/encontrame_app/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Dashboard" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Acerca de" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/drkpkg/Projects/encontrame/encontrame_app/src/pages/tabs/tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/drkpkg/Projects/encontrame/encontrame_app/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Dashboard" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/drkpkg/Projects/encontrame/encontrame_app/src/pages/tabs/tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -244,10 +244,11 @@ publicationInfoPage = __decorate([
         selector: 'page-publication',template:/*ion-inline-start:"/home/drkpkg/Projects/encontrame/encontrame_app/src/pages/publication/publication.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Encontrame</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <img src={{publication.photo}}/>\n  {{publication.name}} - {{publication.age}}\n</ion-content>'/*ion-inline-end:"/home/drkpkg/Projects/encontrame/encontrame_app/src/pages/publication/publication.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__providers_publications_service_publications_service__["a" /* PublicationsServiceProvider */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_publications_service_publications_service__["a" /* PublicationsServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_publications_service_publications_service__["a" /* PublicationsServiceProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_publications_service_publications_service__["a" /* PublicationsServiceProvider */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], publicationInfoPage);
 
-var _a, _b, _c;
 //# sourceMappingURL=publication.js.map
 
 /***/ }),
