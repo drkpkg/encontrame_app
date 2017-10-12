@@ -1,0 +1,38 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-facebook4": {
+            "APP_ID": "132781154012177",
+            "APP_NAME": "Encontrame",
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "cordova-plugin-ionic-webview": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.drkpkg.encontrame"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -1,27 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { PublicationsServiceProvider } from './../../providers/publications-service/publications-service';
+import { NavParams, ModalController } from 'ionic-angular';
+import { RestServiceProvider } from './../../providers/rest-service/rest-service';
 
 @Component({
   selector: 'page-publication',
   templateUrl: 'publication.html',
-  providers: [PublicationsServiceProvider]
 })
 
 export class publicationInfoPage {
   public publication: any;
 
   constructor(
-    public navCtrl: NavController, 
-    public publicationsService: PublicationsServiceProvider,
-    private navParams: NavParams){
-      this.load(this.navParams.get('id'));
+    public modalCtrl: ModalController, public navParams: NavParams){
+      this.publication = this.navParams.get('data')[0];
   }
-
-  load(id) {
-    this.publicationsService.load('publications/' + id)
-    .then(data => {
-      this.publication = data;
-    });
-  }  
 }

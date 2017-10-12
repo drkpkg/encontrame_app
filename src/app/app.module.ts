@@ -9,14 +9,17 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { publicationInfoPage } from './../pages/publication/publication';
+import { LoginPage } from './../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { PublicationsServiceProvider } from '../providers/publications-service/publications-service';
+import { RestServiceProvider } from '../providers/rest-service/rest-service';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -26,11 +29,13 @@ import { PublicationsServiceProvider } from '../providers/publications-service/p
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -41,7 +46,7 @@ import { PublicationsServiceProvider } from '../providers/publications-service/p
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PublicationsServiceProvider
+    RestServiceProvider,
   ]
 })
 export class AppModule {}

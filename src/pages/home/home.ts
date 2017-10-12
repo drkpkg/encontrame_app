@@ -1,35 +1,35 @@
 import { publicationInfoPage } from './../publication/publication';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PublicationsServiceProvider } from './../../providers/publications-service/publications-service';
+import { RestServiceProvider } from './../../providers/rest-service/rest-service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [PublicationsServiceProvider]
+  providers: [RestServiceProvider]
 })
 
 export class HomePage {
   public publication: any;
   public publications: any;
-  
-  constructor(public navCtrl: NavController, public publicationsService: PublicationsServiceProvider){
+
+  constructor(public navCtrl: NavController, public publicationsService: RestServiceProvider){
     this.loadPublications();
   }
   
   loadPublications(){
-    this.publicationsService.load('/publications')
+    this.publicationsService.get('publications')
     .then(data => {
-      this.publications = data.data;
+      this.publications = data;
     });
   }
 
   publicationInfo(id){
-    this.publicationsService.load('/publications/' + id)
+    this.publicationsService.get('publications/' + id)
     .then(data => {
-      this.publication = data.data;
+      this.publication = data;
       this.navCtrl.push(publicationInfoPage, {
-        id: id
+        data: this.publication
       })
     });
   }
