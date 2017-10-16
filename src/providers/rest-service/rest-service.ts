@@ -6,14 +6,12 @@ import 'rxjs/add/operator/map';
 export class RestServiceProvider {
   data: any;
   parsedUrl (url){ 
-    this.data = [];
     return 'http://localhost:3000/api/v1/'+ url +'?token=LHIuovDZqiz7d8pwYaoHGGkzTBHdQReH';
   }
   
   constructor(public http: Http) {}
 
   get(url) {
-    console.log("Procesando " + url)
     if (this.data) {
       return Promise.resolve(this.data);
     }

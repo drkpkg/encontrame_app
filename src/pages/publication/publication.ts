@@ -12,6 +12,6 @@ export class publicationInfoPage {
 
   constructor(
     public modalCtrl: ModalController, public navParams: NavParams){
-      this.publication = this.navParams.get('data')[0];
+      this.publication = this.navParams.get('data');
   }
 }

@@ -10,27 +10,35 @@ import { RestServiceProvider } from './../../providers/rest-service/rest-service
 })
 
 export class HomePage {
-  public publication: any;
-  public publications: any;
+  public publications = [];
 
-  constructor(public navCtrl: NavController, public publicationsService: RestServiceProvider){
+  constructor(public navCtrl: NavController, public restService: RestServiceProvider){
     this.loadPublications();
   }
   
   loadPublications(){
-    this.publicationsService.get('publications')
+    this.restService.get('publications')
     .then(data => {
-      this.publications = data;
+      this.publications = data.data;
     });
   }
 
-  publicationInfo(id){
-    this.publicationsService.get('publications/' + id)
-    .then(data => {
-      this.publication = data;
-      this.navCtrl.push(publicationInfoPage, {
-        data: this.publication
-      })
-    });
+  publicationInfo(publication){
+    this.navCtrl.push(publicationInfoPage, {
+      data: publication
+    })
+  }
+
+  doInfinite(infiniteScroll) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      for (let i = 0; i < 30; i++) {
+        this.publications.push( this..length );
+      }
+
+      console.log('Async operation has ended');
+      infiniteScroll.complete();
+    }, 500);
   }
 }
