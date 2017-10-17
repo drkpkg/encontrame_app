@@ -17,7 +17,7 @@ export class HomePage {
   }
   
   loadPublications(){
-    this.restService.get('publications')
+    this.restService.get('publications', '&from=1&to=10')
     .then(data => {
       this.publications = data.data;
     });
@@ -30,15 +30,12 @@ export class HomePage {
   }
 
   doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      for (let i = 0; i < 30; i++) {
-        this.publications.push( this..length );
+    this.restService.get('publications','&from='+ (this.publications.length+1) +'&to='+(this.publications.length+11))
+    .then(data => {
+      for (let i = 0; i < data.data.length; i++) {
+        this.publications.push( data.data[i] );
       }
-
-      console.log('Async operation has ended');
-      infiniteScroll.complete();
-    }, 500);
+      infiniteScroll.complete(); 
+    });
   }
 }

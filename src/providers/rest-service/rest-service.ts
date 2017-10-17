@@ -5,19 +5,21 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestServiceProvider {
   data: any;
-  parsedUrl (url){ 
-    return 'http://localhost:3000/api/v1/'+ url +'?token=LHIuovDZqiz7d8pwYaoHGGkzTBHdQReH';
+  parsedUrl (url,params){ 
+    return 'http://localhost:3000/api/v1/'+ url +'?token=LHIuovDZqiz7d8pwYaoHGGkzTBHdQReH' + params;
   }
   
   constructor(public http: Http) {}
 
-  get(url) {
-    if (this.data) {
+  get(url, params='') {
+    console.log("Procesando " + this.parsedUrl(url, params))
+
+    if (this.data && params=='') {
       return Promise.resolve(this.data);
     }
-  
+
     return new Promise(resolve => {
-      this.http.get(this.parsedUrl(url))
+      this.http.get(this.parsedUrl(url, params))
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -34,7 +36,7 @@ export class RestServiceProvider {
     let options = new RequestOptions({ headers: headers });
     
     return new Promise(resolve => {
-      this.http.post(this.parsedUrl(url), params, options)
+      this.http.post(this.parsedUrl(url,''), params, options)
       .map(res => res.json())
       .subscribe(data => {
         this.data = data;
@@ -50,7 +52,7 @@ export class RestServiceProvider {
     let options = new RequestOptions({ headers: headers });
     
     return new Promise(resolve => {
-      this.http.put(this.parsedUrl(url),params, options)
+      this.http.put(this.parsedUrl(url,''),params, options)
       .map(res => res.json())
       .subscribe(data => {
         this.data = data;
