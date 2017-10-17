@@ -1,17 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Contact
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+    <ion-list>
+        <ion-item>
+            {{email}}
+        </ion-item>
+
+    </ion-list>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+        <button ion-button color="danger" full (click)="Logout()">Cerrar sesion</button>
     </ion-item>
-  </ion-list>
 </ion-content>

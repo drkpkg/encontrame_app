@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Encontrame</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    contact_phone sex
+
+    <h2>Registro de persona</h2>
+    <ion-item>
+        <ion-input type="file" [(ngModel)]="photo"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Nombre completo</ion-label>
+        <ion-input type="text" [(ngModel)]="person_name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Apodo</ion-label>
+        <ion-input type="text" [(ngModel)]="nickname"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Edad</ion-label>
+        <ion-input type="text" [(ngModel)]="age"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Edad aproximada</ion-label>
+        <ion-checkbox [(ngModel)]="approximate_age">Edad aproximada</ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Fecha de extravio</ion-label>
+        <ion-input type="date" [(ngModel)]="date_of_disappearance"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Altura</ion-label>
+        <ion-input type="number" [(ngModel)]="height"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Peso</ion-label>
+        <ion-input type="text" [(ngModel)]="weight"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Contextura</ion-label>
+        <ion-select [(ngModel)]="structure" multiple="false">
+            <ion-option value="delgado">Delgado</ion-option>
+            <ion-option value="normal">Normal</ion-option>
+            <ion-option value="obeso">Obeso</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Rasgos y ropa</ion-label>
+        <ion-input type="text" [(ngModel)]="clothing"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Correo electronico</ion-label>
+        <ion-input type="email" [(ngModel)]="contact_email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Telefono</ion-label>
+        <ion-input type="text" [(ngModel)]="contact_phone"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="guardarPublicacion()">Guardar</button>
+
+</ion-content>

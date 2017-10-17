@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestServiceProvider } from '../providers/rest-service/rest-service';
 import { IonicStorageModule } from '@ionic/storage';
+import { publicationNewPage } from '../pages/publication_new/publication_new';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ContactPage,
     HomePage,
     TabsPage,
-    publicationInfoPage
+    publicationInfoPage,
+    publicationNewPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ContactPage,
     HomePage,
     TabsPage,
-    publicationInfoPage
+    publicationInfoPage,
+    publicationNewPage
   ],
   providers: [
     StatusBar,

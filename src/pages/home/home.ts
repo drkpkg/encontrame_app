@@ -2,6 +2,7 @@ import { publicationInfoPage } from './../publication/publication';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RestServiceProvider } from './../../providers/rest-service/rest-service';
+import { publicationNewPage } from '../publication_new/publication_new';
 
 @Component({
   selector: 'page-home',
@@ -37,5 +38,9 @@ export class HomePage {
       }
       infiniteScroll.complete(); 
     });
+  }
+
+  newPublication(){
+    this.navCtrl.push(publicationNewPage)
   }
 }
